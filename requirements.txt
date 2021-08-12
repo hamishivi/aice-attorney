@@ -12,7 +12,8 @@ tinydb
 https://github.com/explosion/spacy-models/releases/download/xx_ent_wiki_sm-2.3.0/xx_ent_wiki_sm-2.3.0.tar.gz 
 google-cloud-translate==2.0.1
 opencv-python
-https://download.pytorch.org/whl/cpu/torch-1.5.1%2Bcpu-cp36-cp36m-linux_x86_64.whl
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.8.1+cpu
 aitextgen
 fastapi
 uvicorn
