@@ -7,3 +7,4 @@ data*.txt
 *data.txt
 script*
 data/
+smaller_trained_model/
