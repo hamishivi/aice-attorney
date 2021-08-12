@@ -13,7 +13,7 @@ https://github.com/explosion/spacy-models/releases/download/xx_ent_wiki_sm-2.3.0
 google-cloud-translate==2.0.1
 opencv-python
 -f https://download.pytorch.org/whl/torch_stable.html
-torch==1.6.1+cpu
+torch==1.6.0+cpu
 aitextgen
 fastapi
 uvicorn
