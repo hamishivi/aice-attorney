@@ -1,20 +1,9 @@
-from fastapi import FastAPI
-from fastapi.responses import FileResponse, StreamingResponse
+import streamlit as st
 from aigen import random_gen
 import gdown
 import os
 
-some_file_path = "hello.mp4"
-app = FastAPI()
-
-
-@app.get("/")
-async def main():
-    return FileResponse("index.html")
-
-@app.get("/generate")
-def gen_page():
-    # download model
+def gen_and_display():
     if not os.path.exists('smaller_trained_model'):
         os.mkdir('smaller_trained_model')
     if not os.path.exists("smaller_trained_model/config.json"):
@@ -27,7 +16,7 @@ def gen_page():
         )
     # generate file
     random_gen('thing.mp4')
-    def iterfile():  
-        with open('thing.mp4', mode="rb") as file_like:  
-            yield from file_like  
-    return StreamingResponse(iterfile(), media_type="video/mp4")
+    st.video('thing.mp4')
+
+st.title('Endl-Ace Attorney')
+st.button('Generate!', on_click=gen_and_display)
