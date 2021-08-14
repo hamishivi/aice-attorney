@@ -69,7 +69,6 @@ def generate_from_text(text, output_video):
     char_pat = re.compile(r'^[a-zA-Z\?]*:?\s*$')
     # construct comments
     comments = []
-    used_chars = {}
     current_comment = ''
     current_character = ''
     score = 0
@@ -77,7 +76,11 @@ def generate_from_text(text, output_video):
         line = line.strip()
         if not line:
             continue
-        if char_pat.match(line):
+        # artifacts from script.
+        # im not recreating the 'actual' flow... yet`
+        if line == 'Leads back to:' or line == 'Leads to:':
+            current_comment = ''
+        elif char_pat.match(line):
             if current_comment:
                 comments.append(Comment(text_content=current_comment, user_name=current_character, score=score))
                 comments[-1].character = get_char(current_character)
