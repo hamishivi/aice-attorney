@@ -19,4 +19,5 @@ def gen_and_display():
     st.video('thing.mp4')
 
 st.title('Endl-Ace Attorney')
+st.text('Press generate to make the AI generate a random ace attorney script for you to watch!\nNote it may take a minute or so to do so hold tight.')
 st.button('Generate!', on_click=gen_and_display)
